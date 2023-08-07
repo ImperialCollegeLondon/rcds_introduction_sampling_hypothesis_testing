@@ -2,15 +2,15 @@
 
 ## Dr. Jesús Urtasun Elizari
 
-## Imperial College London - Spring term 2023
+## Imperial College London - Winter term 2023
 
 <img src="/readme_figures/grad-school-logo.png">
 
 ### Find the content of the course in GitHub:
-[https://github.com/ImperialCollegeLondon/RCDS_Statistics1/tree/main](https://github.com/ImperialCollegeLondon/RCDS_Statistics1/tree/main)
+[https://github.com/ImperialCollegeLondon/RCDS_Statistics1](https://github.com/ImperialCollegeLondon/RCDS_Statistics1)
 
 This course provides an introduction to the field of probability, statistical theory of sampling, parameter estimation and hypothesis testing.
-The course is organized in six chapters, covering the followng topics.
+The course is organized in six chapters, covering the following topics.
 
 - Introduction to probability. Random variables.
 - Probability distributions. Discrete and continuous probability.
