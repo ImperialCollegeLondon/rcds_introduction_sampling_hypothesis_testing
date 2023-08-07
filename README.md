@@ -1,2 +1,2 @@
 # RCDS_Statistics1
-RCDS Statistics1 - Introduction to probability and hypothesis testing
+RCDS Statistics 1 - Introduction to probability and hypothesis testing
