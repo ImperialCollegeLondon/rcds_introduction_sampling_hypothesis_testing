@@ -4,7 +4,7 @@
 
 ## Imperial College London - Spring term 2023
 
-<img src="/readme-images/grad-school-logo.png">
+<img src="/readme_figures/grad-school-logo.png">
 
 ### Find the content of the course in GitHub:
 [https://github.com/ImperialCollegeLondon/RCDS_Statistics1/tree/main](https://github.com/ImperialCollegeLondon/RCDS_Statistics1/tree/main)
