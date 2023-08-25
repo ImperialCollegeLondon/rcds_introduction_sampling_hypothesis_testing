@@ -12,12 +12,9 @@
 This course provides an introduction to the field of probability, statistical theory of sampling, parameter estimation and hypothesis testing.
 The course is organized in six chapters, covering the following topics.
 
-- Introduction to probability. Random variables.
-- Probability distributions. Discrete and continuous probability.
-- Sampling from a probability distribution.
-- Sampling methods.
-- Confidence intervals.
-- Hypothesis testing.
+- Chapter 1: Introduction to probability & random variables.
+- Chapter 2: Sampling from a probability distribution & Confidence intervals.
+- Chapter 3: Hypothesis testing.
 
 
 ## Setup
