@@ -9,6 +9,6 @@
 ### Chapter 2: Sampling from a distribution & confidence intervals
 
 - Sampling from a probability distribution.
-- Standardized normal disteibution.
+- Standardized normal distribution.
 - The Central Limit Theorem.
 - Statistical estimators. Computing confidence intervals.

@@ -8,7 +8,7 @@
 
 ### Chapter 1: Introduction to probability and random variables
 
-- Definition of probability. A number to quantify surprise.
+- Definition of probability (...).
 - Discrete and continuous probability. Probability distributions.
 - Examples of probability distributions. Binomial, Poisson, Gaussian.
 - Sampling from a distribution. Comoputing momenta of a distribution.
