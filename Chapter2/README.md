@@ -1,4 +1,4 @@
-# RCDS Statistics 1 - Introduction to probability & hypothesis testing
+# RCDS - Random sampling & hypothesis testing
 
 ## Dr. Jesús Urtasun Elizari
 
