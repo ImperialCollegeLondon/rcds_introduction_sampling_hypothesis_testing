@@ -1,4 +1,4 @@
-# RCDS - Random sampling & hypothesis testing
+# RCDS - Introduction to sampling & hypothesis testing
 
 ## Dr. Jesús Urtasun Elizari
 
