@@ -26,19 +26,17 @@ The course is organized in six chapters, covering the following topics.
 - Confidence intervals.
 - The z distribution and student's t distribution.
 
-
 ## Chapter 3: Introduction to hypothesis testing.
 
 - Introduction to Hypothesis testing.
-- Null and alternative hypothesis.
-- Significance and p-values.
+- Null and alternative hypothesis. Significance and p-values.
+- Comparing two means. Two sample t-test.
 
 ## Setup
 
 We will be working with jupyter notebooks. The easiest way to access jupyter is via the Anaconda platform.
 Please install Anaconda from https://www.anaconda.com in advance of the workshop.
 NB no knowledge of programming is required for this workshop.
-
 
 ## Getting Started
 
