@@ -2,7 +2,7 @@
 
 ## Dr. Jesús Urtasun Elizari
 
-## Imperial College London - Winter term 2023
+## Imperial College London - 2023 / 2024
 
 <img src="/readme_figures/grad-school-logo.png">
 
@@ -12,10 +12,26 @@
 This course provides an introduction to the field of probability, statistical theory of sampling, parameter estimation and hypothesis testing.
 The course is organized in six chapters, covering the following topics.
 
-- Chapter 1: Introduction to probability & random variables.
-- Chapter 2: Sampling from a distribution & confidence intervals.
-- Chapter 3: Introduction to hypothesis testing.
+# Roadmap of the course
 
+## Chapter 1 - Introduction to probability & random variables
+
+- Introduction to probability & random variables.
+- Discrete probability distributions.
+- Continuous probability distributions.
+
+## Chapter 2: The Central Limit Theorem & confidence intervals
+
+- The Central Limit Theorem.
+- Confidence intervals.
+- The z distribution and student's t distribution.
+
+
+## Chapter 3: Introduction to hypothesis testing.
+
+- Introduction to Hypothesis testing.
+- Null and alternative hypothesis.
+- Significance and p-values.
 
 ## Setup
 
