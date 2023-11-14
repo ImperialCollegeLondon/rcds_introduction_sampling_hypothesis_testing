@@ -1,0 +1,45 @@
+---
+title: "Introduction to random sampling and hypothesis testing"
+author: "Research Computing and Data Science: Jesus Urtasun; jurtasun@ic.ac.uk"
+date: "`r format(Sys.time(), '%d %B %Y')`"
+output:
+  rmdformats::robobook:
+    self_contained: true
+    code_folding: hide
+    thumbnails: false
+    lightbox: true
+    gallery: false
+    highlight: tango
+    number_sections: true
+editor_options: 
+  chunk_output_type: console
+---
+
+```{r setup, include = FALSE}
+
+# knitr::opts_chunk$set(echo = TRUE)
+knitr::opts_chunk$set(cache = TRUE, warning = FALSE, echo = T, message = FALSE, cache.lazy = FALSE)
+
+```
+
+```{r import, cache = T, echo = T, eval = T, warnings = F, messages = F}
+
+# Import libraries
+
+# Set working directory
+workdir <- "/Users/jurtasun/Desktop/Courses/ICL/RCDS_Introduction_sampling_hypothesis_testing/Chapter2"
+setwd(workdir)
+
+```
+
+# Chapter 2
+
+## 2.1 The Central Limit Theorem
+
+In this chapter we will describe one of the most fundamental results in statistical inference. The central limit theorem (CLT) states that the distribution of sample means, meaning the mean values computed for a set of different experiments, approximates a normal distribution as the sample size gets larger, regardless of the population's distribution. Sample sizes equal to or greater than 30 are often considered sufficient for the CLT to hold.
+
+```{r clt, cache = T, echo = T, eval = T, warnings = F, messages = F}
+
+# The Central Limit Theorem
+
+```

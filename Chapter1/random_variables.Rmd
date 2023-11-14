@@ -1,0 +1,76 @@
+---
+title: "Introduction to random sampling and hypothesis testing"
+author: "Research Computing and Data Science: Jesus Urtasun; jurtasun@ic.ac.uk"
+date: "`r format(Sys.time(), '%d %B %Y')`"
+output:
+  rmdformats::robobook:
+    self_contained: true
+    code_folding: hide
+    thumbnails: false
+    lightbox: true
+    gallery: false
+    highlight: tango
+    number_sections: true
+editor_options: 
+  chunk_output_type: console
+---
+
+```{r setup, include = FALSE}
+
+# knitr::opts_chunk$set(echo = TRUE)
+knitr::opts_chunk$set(cache = TRUE, warning = FALSE, echo = T, message = FALSE, cache.lazy = FALSE)
+
+```
+
+```{r import, cache = T, echo = T, eval = T, warnings = F, messages = F}
+
+# Import libraries
+
+# Set working directory
+workdir <- "/Users/jurtasun/Desktop/Courses/ICL/RCDS_Introduction_sampling_hypothesis_testing/Chapter1"
+setwd(workdir)
+
+```
+
+# Chapter 1
+
+## 1.1 Introduction to probability and random variables
+
+### Probability theory
+
+In this course we will deal with random - or "stochastic", rather that "deterministic" - processes. As a quick way to introduce probability, it is useful to thing about predictions, and counting the number of times one obtains a specific result. In this framework, known as "frequentist" approach, probability can be defined just as a number, by counting, the number of times we get a particular outcome. In other workds, a number that quantifies "surprise".
+
+Further discussion on frequentist vs bayesian approaches to define probability, or the meaning of the word "susprise" itself in this context and its relation to significance and hypothesis testing, will be discussed in further chapters.
+
+### Probability distributions
+
+From now on, the terms random variable, probability distribution, and expectation value will be used to address random / stochastic processes. Probability distributions are mathematical objects we will use to describe how a series of random events are distributed, and from which we will actually compute expectation values, such as mean value, deviation or error, etc. A proper discussion on the so-called "momenta of a distribution" will be done further ahead. Throughout the course we will be running practical examples, hence the cell below shows a first chunk of python code to be executed.
+
+
+```{r introduction, cache = T, echo = T, eval = T, warnings = F, messages = F}
+
+# Introduction to probability and random variables
+
+```
+
+## 1.2 Discrete distributions
+
+```{r discrete, cache = T, echo = T, eval = T, warnings = F, messages = F}
+
+# Discrete distributions
+
+# Binomial distribution
+
+# Poisson distribution
+
+```
+
+## 1.3 Continuous distributions
+
+```{r continuous, cache = T, echo = T, eval = T, warnings = F, messages = F}
+
+# Continuous distributions
+
+# Gaussian distribution
+
+```
