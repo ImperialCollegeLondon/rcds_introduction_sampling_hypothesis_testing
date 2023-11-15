@@ -1,0 +1,57 @@
+---
+title: "Introduction to random sampling and hypothesis testing"
+author: "Research Computing and Data Science: Jesus Urtasun; jurtasun@ic.ac.uk"
+date: "`r format(Sys.time(), '%d %B %Y')`"
+output:
+  rmdformats::robobook:
+    self_contained: true
+    code_folding: hide
+    thumbnails: false
+    lightbox: true
+    gallery: false
+    highlight: tango
+    number_sections: true
+editor_options: 
+  chunk_output_type: console
+---
+
+```{r setup, include = FALSE}
+
+# knitr::opts_chunk$set(echo = TRUE)
+knitr::opts_chunk$set(cache = TRUE, warning = FALSE, echo = T, message = FALSE, cache.lazy = FALSE)
+
+```
+
+```{r import, cache = T, echo = T, eval = T, warnings = F, messages = F}
+
+# Import libraries
+
+# Set working directory
+workdir <- "/Users/jurtasun/Desktop/Courses/ICL/RCDS_Introduction_sampling_hypothesis_testing/Chapter3"
+setwd(workdir)
+
+```
+
+# Chapter 3
+
+## 3.1 Hypothesis testing
+
+We will now discuss one of the main topics of statistical inference. Once we have described random events, discrete and continous distributions, and how to build confidence intervals, we are ready to start formulating hypothesis and quantify the accuracy of given predictions.
+
+Wi will first discuss the null and alternative hypothesis, and then the idea of significance and surprise. Once a hypothesis on a particular process has been stated, one can take the observed results and infer how likely was a specific event to happen. The mathematical object we will use to quantify such surprise, meaning how likely / unlikely was to observe a specific even given the previous hypothesis, is referred to as p-value.
+
+```{r hypothesis_testing, cache = T, echo = T, eval = T, warnings = F, messages = F}
+
+# Hypothesis testing
+
+```
+
+## 3.2 Difference between two means: two sample t-test
+
+We use the t test to assess whether two samples taken from normal distributions have significantly different means. The test statistic follows a Student's t-distribution, provided that the variances of the two groups are equal. Other variants of the t-test are applicable under different conditions.
+
+```{r t_test, cache = T, echo = T, eval = T, warnings = F, messages = F}
+
+# The Central Limit Theorem
+
+```
