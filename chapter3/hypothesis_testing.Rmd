@@ -1,0 +1,63 @@
+---
+title: "RCDS Introduction to sampling & hypothesis testing"
+author: "Jesus Urtasun; jurtasun@ic.ac.uk"
+date: "`r format(Sys.time(), '%d %B %Y')`"
+output:
+  rmdformats::robobook:
+    self_contained: true
+    code_folding: hide
+    thumbnails: false
+    lightbox: true
+    gallery: false
+    highlight: tango
+    number_sections: true
+editor_options: 
+  chunk_output_type: console
+---
+
+# Chapter 3. Hypothesis testing
+
+## Import libraries
+
+```{r import, include = FALSE}
+
+# Import libraries
+
+```
+
+## 3.1 General approach
+
+There are many circumstances where we simply want to check whether an observation looks like it is compatible with the null hypothesis, 𝐻0. Having decided on a significance level $\alpha$ and whether the situation warrants a one-tailed or a two-tailed test, we can use the cdf of the null distribution to calculate a p-value for the observation.
+
+Parametric tests rely on a probability distribution of known form as a model for the null hypothesis. Here we will look at some commonly-encountered examples. How surprising is my result? Calculating a p-value
+
+### i) Example: check if a die is loaded
+
+Your arch-nemesis Blofeld always seems to win at ludo, and you have started to suspect him of using a loaded die.
+You observe the following outcomes from 100 rolls of his die:
+
+```{r example1, include = FALSE}
+
+# Check if a die is loaded
+
+```
+
+### ii) Example: check if a coin is fair
+
+Dr Vogel has challenged you to a game of ludo and you have agreed to flip a coin to decide who starts.
+You're not sure whether the coin she is using is fair or not.
+She flips it 50 times for you, with the following results: (1=heads, 0=tails)
+
+```{r example2, include = FALSE}
+
+# Check if a coin is fair
+
+```
+
+### 3.2 Comparing means: 2-sample t-test
+
+```{r t_test, include = FALSE}
+
+# Comparing means: 2-sample t-test
+
+```
