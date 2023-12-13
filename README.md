@@ -10,17 +10,17 @@
 [https://github.com/ImperialCollegeLondon/RCDS_Statistics1](https://github.com/ImperialCollegeLondon/RCDS_Statistics1)
 
 This course provides an introduction to the field of probability, statistical theory of sampling, parameter estimation and hypothesis testing.
-The course is organized in six chapters, covering the following topics.
+The course is organized in three chapters, covering the following topics. All will be followed by a practical session, both in python and R.
 
 # Roadmap of the course
 
-## Chapter 1 - Introduction to probability & random variables
+## Chapter 1 - Introduction to probability & random variables.
 
 - What is probability. Random variables.
 - Discrete probability distributions. "Mass" distributions.
 - Continuous probability distributions. "Density" distributions.
 
-## Chapter 2: The Central Limit Theorem & confidence intervals
+## Chapter 2: The Central Limit Theorem & confidence intervals.
 
 - The Central Limit Theorem.
 - Confidence intervals and standard variables.
