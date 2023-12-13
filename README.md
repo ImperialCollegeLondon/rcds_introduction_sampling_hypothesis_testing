@@ -16,20 +16,20 @@ The course is organized in six chapters, covering the following topics.
 
 ## Chapter 1 - Introduction to probability & random variables
 
-- Introduction to probability & random variables.
-- Discrete probability distributions.
-- Continuous probability distributions.
+- What is probability. Random variables.
+- Discrete probability distributions. "Mass" distributions.
+- Continuous probability distributions. "Density" distributions.
 
 ## Chapter 2: The Central Limit Theorem & confidence intervals
 
 - The Central Limit Theorem.
-- Confidence intervals.
-- The z distribution and student's t distribution.
+- Confidence intervals and standard variables.
+- The z and t scores. The z distribution and student's t distribution.
 
 ## Chapter 3: Introduction to hypothesis testing.
 
-- Introduction to Hypothesis testing.
-- Null and alternative hypothesis. Significance and p-values.
+- Introduction to Hypothesis testing. Null and alternative hypothesis.
+- Quantify significance. Pearson p-values.
 - Comparing two means. Two sample t-test.
 
 ## Setup
