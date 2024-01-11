@@ -1,6 +1,6 @@
-# LMS Introduction to statistics & hypothesis testing
-# Jesús Urtasun Elizari - LMS Bioinformatics
-# November 2023
+# RCDS Introduction to statistics & hypothesis testing
+# Jesús Urtasun Elizari - ICL
+# January 2024
 
 # Chapter 2. The central limit theorem
 
