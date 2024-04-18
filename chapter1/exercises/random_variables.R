@@ -47,7 +47,7 @@ dbinom(5, 10, 1/3)
 # Poisson distribution with average 7
 lambda = 7
 x = 0:20
-# Probabulity mass function
+# Probability mass function
 pmf <- dpois(x, lambda)
 
 # Plot probability mass function
