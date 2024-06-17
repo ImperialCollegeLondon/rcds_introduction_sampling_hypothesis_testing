@@ -2,7 +2,6 @@
 # Jesus Urtasun Elizari - Imperial College London
 # Chapter 1 - Random variables and probability distributions
 
-
 # Import libraries
 import numpy as np
 from math import comb, exp, factorial, erf, sqrt
@@ -128,15 +127,29 @@ probability2 = stats.norm.cdf(x2, mu, sigma) - stats.norm.cdf(x1, mu, sigma)
 print(f"\nProbability of the Gaussian distribution being between {x1} and {x2}: {probability1}")
 print(f"Probability of the Gaussian distribution being between {x1} and {x2}: {probability2}")
 
-# # Calculating probability of (-1sigma, 1sigma) 68% CI
-# x1 = -2; x2 = 2; mu = 1; sigma = 2
-# probability = stats.norm.cdf(x2, mu, sigma) - stats.norm.cdf(x1, mu, -sigma)
-# print(f"\n68% ci: {probability}")
+# Calculating probability
+x1 = -3; x2 = 3; mu = 1; sigma = 2
+probability1 = gaussian_density(x2, mu, sigma) - gaussian_density(x1, mu, sigma)
+probability2 = stats.norm.cdf(x2, mu, sigma) - stats.norm.cdf(x1, mu, sigma)
+print(f"\nProbability of the Gaussian distribution being between {x1} and {x2}: {probability1}")
+print(f"Probability of the Gaussian distribution being between {x1} and {x2}: {probability2}")
 
-# # Calculating probability of (-2sigma, 2sigma) 95% CI
-# x1 = -2; x2 = 2; mu = 1; sigma = 2
-# probability = stats.norm.cdf(x2, mu, 2*sigma) - stats.norm.cdf(x1, mu, -2*sigma)
-# print(f"\n95% ci: {probability}")
+
+# Confidence intervals ........................................................
+print("Confidence intervals")
+mu = 1; sigma = 17
+
+# Calculating probability of (-1sigma, 1sigma) 68% CI
+probability = stats.norm.cdf(-sigma, mu, sigma) - stats.norm.cdf(sigma, mu, sigma)
+print(f"\n68% ci: {probability}")
+
+# Calculating probability of (-2sigma, 2sigma) 95% CI
+probability = stats.norm.cdf(-2*sigma, mu, sigma) - stats.norm.cdf(2*sigma, mu, sigma)
+print(f"\n95% ci: {probability}")
+
+# Calculating probability of (-2sigma, 2sigma) 95% CI
+probability = stats.norm.cdf(-3*sigma, mu, sigma) - stats.norm.cdf(3*sigma, mu, sigma)
+print(f"\n99% ci: {probability}")
 
 # Plot gaussian distrubtion
 x = np.linspace(mu - 4 * sigma, mu + 4 * sigma, 1000)
