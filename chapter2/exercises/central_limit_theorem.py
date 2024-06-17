@@ -11,7 +11,7 @@ import pdb
 population_distribution = np.random.randint(1, 7, 1000)  # Uniform distribution from 1 to 6 # bins = range(1, 8)
 # population_distribution = np.random.binomial(n = 10, p = 0.5, size = 1000)
 # population_distribution = np.random.poisson(lam = 5, size = 1000) # bins = range(-10, 10)
-# population_distribution = np.random.normal(loc = 0, scale = 1, size = 1000) # bins = range(-10, 10)
+# population_distribution = np.random.normal(loc = 0, scale = 1, size = 1000) # bins = range(-5, 5)
 
 # Define sample sizes for demonstration
 sample_sizes = [10, 50, 200]
