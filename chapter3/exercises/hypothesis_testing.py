@@ -7,64 +7,39 @@ import numpy as np
 import scipy.stats as stats
 import matplotlib.pyplot as plt
 
-# Function plotting histogram
-def plot_histogram(die_rolls):
-    """
-    Plot a histogram of the die rolls.
-    
-    Parameters:
-    die_rolls (list or array): The observed rolls of the die.
-    """
-    plt.hist(die_rolls, bins=np.arange(1, 8) - 0.5, edgecolor='black', rwidth=0.8)
-    plt.xticks(range(1, 7))
-    plt.xlabel('Die Roll')
-    plt.ylabel('Frequency')
-    plt.title('Histogram of Die Rolls')
-    plt.show()
-
-# Function computing one-sample t-test
-def t_test_die_rolls(die_rolls):
-    """
-    Perform a one-sample t-test to check if the die is fair.
-    
-    Parameters:
-    die_rolls (list or array): The observed rolls of the die.
-    
-    Returns:
-    t_statistic (float): The t-statistic value.
-    p_value (float): The p-value of the t-test.
-    """
-    # Calculate the observed mean
-    observed_mean = np.mean(die_rolls)
-    
-    # Expected mean for a fair die
-    expected_mean = 3.5
-    
-    # Perform the one-sample t-test
-    t_statistic, p_value = stats.ttest_1samp(die_rolls, expected_mean)
-    
-    return t_statistic, p_value
-
 # Formulate null and alternative hypothesis
-# H0 (...)
-# H1 (...)
+# H0: die is fair, p = 1/2
+# H1: die is biased, p != 1/2
 
-# Collect data
+# Example data
 die_rolls = [1, 2, 3, 4, 5, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6]
 
-# Plot the histogram
-plot_histogram(die_rolls)
+# Plotting the histogram
+plt.figure(figsize = (8, 6))
+plt.hist(die_rolls, bins = range(1, 8), edgecolor = "black", align = "left", rwidth = 0.8)
+plt.xlabel("Die Roll")
+plt.ylabel("Frequency")
+plt.title("Histogram of Die Rolls")
+plt.xticks(range(1, 7))
+plt.grid(axis = "y", alpha = 0.75)
+plt.show()
 
-# Perform the t-test
-t_statistic, p_value = t_test_die_rolls(die_rolls)
+# Manual Calculation
+n = len(die_rolls)
+expected_mean = 3.5
+sample_mean = np.mean(die_rolls)
+sample_std = np.std(die_rolls, ddof = 1)  # ddof = 1 for sample standard deviation
+print("Sample size: ", n, "\nobserved mean: ", sample_mean, "\novserved std: ", sample_std)
 
-# Print results
-print(f"t-statistic: {t_statistic}")
-print(f"p-value: {p_value}")
+# Calculate the t-statistic
+t_statistic_manual = (sample_mean - expected_mean) / (sample_std / np.sqrt(n))
 
-# Interpret the results
-alpha = 0.05
-if p_value < alpha:
-    print("The die is likely loaded (reject the null hypothesis).")
-else:
-    print("The die is likely fair (fail to reject the null hypothesis).")
+# Calculate the p-value
+p_value_manual = 2 * (1 - stats.t.cdf(np.abs(t_statistic_manual), df = n-1))
+
+# Using scipy.stats.ttest_1samp for comparison
+t_statistic_scipy, p_value_scipy = stats.ttest_1samp(die_rolls, expected_mean)
+
+# Print the results
+print(f"t-statistic - manual = {t_statistic_manual}, p-value = {p_value_manual}")
+print(f"t-statistic - scipy = {t_statistic_scipy}, p-value = {p_value_scipy}")
