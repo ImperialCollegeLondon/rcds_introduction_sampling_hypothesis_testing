@@ -1,54 +1,70 @@
 # RCDS Introduction to Statistics and random sampling
 # Jesus Urtasun Elizari - Imperial College London
-# Chapter 1 - Random variables and probability distributions
+# Chapter 3 - Hypothesis testing
 
 # Import libraries
 import numpy as np
+import scipy.stats as stats
 import matplotlib.pyplot as plt
-from scipy.stats import t, ttest_1samp
 
-def t_test(sample_data, pop_mean):
+# Function plotting histogram
+def plot_histogram(die_rolls):
     """
-    Perform a one-sample t-test.
+    Plot a histogram of the die rolls.
+    
+    Parameters:
+    die_rolls (list or array): The observed rolls of the die.
+    """
+    plt.hist(die_rolls, bins=np.arange(1, 8) - 0.5, edgecolor='black', rwidth=0.8)
+    plt.xticks(range(1, 7))
+    plt.xlabel('Die Roll')
+    plt.ylabel('Frequency')
+    plt.title('Histogram of Die Rolls')
+    plt.show()
 
-    Args:
-    - sample_data: List or array containing the sample data.
-    - pop_mean: Population mean to test against.
-
+# Function computing one-sample t-test
+def t_test_die_rolls(die_rolls):
+    """
+    Perform a one-sample t-test to check if the die is fair.
+    
+    Parameters:
+    die_rolls (list or array): The observed rolls of the die.
+    
     Returns:
-    - A tuple containing the t-statistic and p-value.
+    t_statistic (float): The t-statistic value.
+    p_value (float): The p-value of the t-test.
     """
-    n = len(sample_data)
-    sample_mean = np.mean(sample_data)
-    sample_std = np.std(sample_data, ddof=1)  # Use Bessel's correction for sample standard deviation
-
-    t_statistic = (sample_mean - pop_mean) / (sample_std / np.sqrt(n))
-    p_value = 2 * (1 - t.cdf(np.abs(t_statistic), df=n - 1))  # two-tailed test
-
+    # Calculate the observed mean
+    observed_mean = np.mean(die_rolls)
+    
+    # Expected mean for a fair die
+    expected_mean = 3.5
+    
+    # Perform the one-sample t-test
+    t_statistic, p_value = stats.ttest_1samp(die_rolls, expected_mean)
+    
     return t_statistic, p_value
 
-# Generate sample data
-np.random.seed(42)  # for reproducibility
-sample_data = np.random.normal(loc=90, scale=10, size=100)
+# Formulate null and alternative hypothesis
+# H0 (...)
+# H1 (...)
 
-# Plot sample data as histogram
-plt.figure(figsize=(10, 5))
-plt.hist(sample_data, bins=20, edgecolor='black', density=True)
-plt.title('Sample Data Histogram')
-plt.xlabel('Value')
-plt.ylabel('Frequency')
+# Collect data
+die_rolls = [1, 2, 3, 4, 5, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6]
 
-# Compute mean of sample data
-sample_mean = np.mean(sample_data)
-plt.axvline(x=sample_mean, color='r', linestyle='--', label=f'Sample Mean: {sample_mean:.2f}')
-plt.show()
+# Plot the histogram
+plot_histogram(die_rolls)
 
+# Perform the t-test
+t_statistic, p_value = t_test_die_rolls(die_rolls)
 
-# Compute probability of the sample mean
-t_statistic1, p_value1 = t_test(sample_data, pop_mean=90)
-t_statistic2, p_value2 = ttest_1samp(sample_data, popmean=90)
+# Print results
+print(f"t-statistic: {t_statistic}")
+print(f"p-value: {p_value}")
 
-# Print t-test results
-print(f"Sample Mean: {sample_mean:.2f}")
-print(f"t-statistic: {t_statistic1:.2f}, p-value: {p_value1:.4f}")
-print(f"t-statistic: {t_statistic2:.2f}, p-value: {p_value2:.4f}")
+# Interpret the results
+alpha = 0.05
+if p_value < alpha:
+    print("The die is likely loaded (reject the null hypothesis).")
+else:
+    print("The die is likely fair (fail to reject the null hypothesis).")
