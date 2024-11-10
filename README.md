@@ -1,8 +1,8 @@
-# RCDS - Introduction to sampling & hypothesis testing
+## RCDS - Introduction to sampling & hypothesis testing
 
-## Dr. Jesús Urtasun Elizari
+### Dr. Jesús Urtasun Elizari
 
-## Imperial College London - 2024 / 2025
+### Imperial College London - 2024 / 2025
 
 <img src="/readme_figures/grad-school-logo.png">
 
