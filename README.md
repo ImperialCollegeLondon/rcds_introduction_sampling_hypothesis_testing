@@ -2,12 +2,13 @@
 
 ## Dr. Jesús Urtasun Elizari
 
-## Imperial College London - 2023 / 2024
+## Imperial College London - 2024 / 2025
 
 <img src="/readme_figures/grad-school-logo.png">
 
 ### Find the content of the course in GitHub:
-[https://github.com/ImperialCollegeLondon/RCDS_Statistics1](https://github.com/ImperialCollegeLondon/RCDS_Statistics1)
+[https://github.com/ImperialCollegeLondon/rcds_introduction_sampling_hypothesis_testing]
+(https://github.com/ImperialCollegeLondon/rcds_introduction_sampling_hypothesis_testing)
 
 This course provides an introduction to the field of probability and statistical inference.
 The topics covered will include basic concepts on probability theory, inference, distributions, and hypothesis testing. 
