@@ -19,19 +19,19 @@ No prior experience on statistics or programming is required for the attendance 
 
 ## Roadmap of the course
 
-### Chapter 1. Introduction to probability & random events.
+### Chapter 1. Introduction to probability & random events
 
 - Definition of probability and random events.
 - Discrete probability; "mass" distributions.
 - Continuous probability; "density" distributions.
 
-### Chapter 2. Expected values & parameter estimation.
+### Chapter 2. Expected values & parameter estimation
 
 - Mean and variance as expected value.
 - Mean and variance as momenta of a distribution.
 - The Law of Large Numbers (LLN) and the Central Limit Theorem (CLT).
 
-### Chapter 3. Introduction to hypothesis testing.
+### Chapter 3. Introduction to hypothesis testing
 
 - Prediction vs inference. Formulating hypothesis.
 - General approach. Quantify significance and p-values.
