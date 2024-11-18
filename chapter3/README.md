@@ -24,7 +24,7 @@ import matplotlib.pyplot as plt
 
 ### Check if a die is biased
 
-```pyhton
+```python
 
 # Random seed
 np.random.seed(42)
@@ -120,5 +120,5 @@ if p_value < 0.05:
     print("The die is likely biased (reject null hypothesis).")
 else:
     print("The die is not biased (fail to reject null hypothesis).")
-    
+
 ```
