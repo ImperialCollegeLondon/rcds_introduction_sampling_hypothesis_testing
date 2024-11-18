@@ -10,6 +10,17 @@
 
 In this chapter we will describe random events and probability distriubtions.
 We will focus on two main classes, the so-called *discrete and *continous* events.
+Import the libraries neeed for these examples.
+
+```python
+
+# Import libraries
+import numpy as np
+from math import comb, exp, factorial, erf, sqrt
+from scipy import stats
+import matplotlib.pyplot as plt
+
+```
 
 ### Binomial distribution
 
