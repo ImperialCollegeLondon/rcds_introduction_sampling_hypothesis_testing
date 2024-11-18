@@ -10,6 +10,17 @@
 
 In this chapter we will describe parmeter estimation, mean and variance.
 Then we will discuss the central limit theorem and the law of large numbers.
+Import the libraries neeed for these examples.
+
+```python
+
+# Import libraries
+import numpy as np
+from math import comb, exp, factorial, erf, sqrt
+from scipy import stats
+import matplotlib.pyplot as plt
+
+```
 
 ### Parameter estimation
 
