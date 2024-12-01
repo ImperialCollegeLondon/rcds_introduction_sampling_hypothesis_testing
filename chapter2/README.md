@@ -129,7 +129,7 @@ plt.show()
 sns.set(style = "whitegrid")
 
 # Central Limit Theorem (CLT) .....................................................................
-print("The central limit theorem (CLT)")
+print("The law of large numbers (LLN")
 
 # We simulate 5,000 rolls for the dice and 5,000 samples from the waiting times.
 # For each sample size from 1 to 5,000, we calculate the running mean.
