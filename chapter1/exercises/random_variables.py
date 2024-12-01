@@ -86,8 +86,8 @@ print(f"Probability of observing {x} or less cancer patients with lambda {lmbda}
 x = 5; lmbda = 5
 probability1 = 1 - probability1
 probability2 = 1 - probability2
-print(f"\nProbability of observing {x} or less cancer patients with lambda {lmbda}: {probability1}")
-print(f"Probability of observing {x} or less cancer patients with lambda {lmbda}: {probability2}")
+print(f"\nProbability of observing more than {x} cancer patients with lambda {lmbda}: {probability1}")
+print(f"Probability of observing more than {x} cancer patients with lambda {lmbda}: {probability2}")
 
 # Plot probability distribution
 impacts = stats.poisson(4) # e.g. an average of 4 meteorite impacts per year.
