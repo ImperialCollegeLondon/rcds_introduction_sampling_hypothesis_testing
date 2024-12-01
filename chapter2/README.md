@@ -18,6 +18,7 @@ Import the libraries neeed for these examples.
 import numpy as np
 from math import comb, exp, factorial, erf, sqrt
 from scipy import stats
+import seaborn as sns
 import matplotlib.pyplot as plt
 
 ```
