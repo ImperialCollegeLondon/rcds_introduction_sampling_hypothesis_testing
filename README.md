@@ -9,7 +9,7 @@
 ### Find the content of the course in GitHub:
 [https://github.com/ImperialCollegeLondon/rcds_introduction_sampling_hypothesis_testing](https://github.com/ImperialCollegeLondon/rcds_introduction_sampling_hypothesis_testing)
 
-This course provides an introduction to the field of probability and statistical inference.
+Test this course provides an introduction to the field of probability and statistical inference.
 The topics covered will include basic concepts on probability theory, inference, distributions, and hypothesis testing. 
 The aim of the course is to provide strong foundations at the mathematical and theoretical level, while providing practical exercises to work on real data.
 
