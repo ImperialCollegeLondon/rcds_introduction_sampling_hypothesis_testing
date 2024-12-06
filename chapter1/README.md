@@ -9,7 +9,26 @@
 ## Chapter 1. Introduction to probability & random events.
 
 In this chapter we will describe random events and probability distriubtions.
-We will focus on two main classes, the so-called *discrete and *continous* events.
+We will focus on two main classes, the so-called *discrete* and *continous* events.
+We will simulate a couple of examples for the binomial, Poisson, and Gaussian probabilities, 
+and in all cases we will compare our manual calculations with the ones included in the *stats* package of *scipy*.
+
+Create *python* script for this exercise by running the following command in your terminal.
+
+```bash
+
+touch random_variables.py
+
+```
+
+Open the file with *VScode*.
+
+```bash
+
+code random_variables.py
+
+```
+
 Import the libraries neeed for these examples.
 
 ```python
