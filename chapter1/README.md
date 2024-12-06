@@ -24,23 +24,25 @@ import matplotlib.pyplot as plt
 
 ### Binomial distribution
 
-Write the following function computing the binomial distribution:
+Write the following function computing the binomial distribution for a given number of sucesses *x*, number of trials *n*, and indifidual probability *p*:
 
 ```python
 
 # Function computing binomial probability
 def binomial_probability(x, n, p):
     """
-    Calculate the binomial probability of getting k successes in n trials
+    Calculate the binomial probability of getting n successes in n trials
     with a probability of success p.
     """
     return comb(n, x) * (p ** x) * ((1 - p) ** (n - x))
 
 ```
 
-Run the following code to check the numerical values:
+Run the following code to check the numerical values. We will first compute it with the function we just defined, 
+and then using the *binom* probability mass function, already included in the *stats* library.
 
 ```python
+
 # Probability of 5 heads in 10 flips of a coin
 x = 5; n = 10; p = 1/2
 probability1 = binomial_probability(x, n, p)
@@ -61,25 +63,27 @@ probability1 = binomial_probability(x, n, p)
 probability2 = stats.binom.pmf(x, n, p)
 print(f"\nProbability of answering {x} 5 questions out of {n}: {probability1}")
 print(f"Probability of answering {x} 5 questions out of {n}: {probability2}")
+
 ```
 
 ### Poisson distribution
 
-Write the following function computing the Poisson distribution:
+Write the following function computing the Poisson distribution, for a given number of observations *x* and observed aberage *lmbda*.
 
 ```python
 
 # Function computing poisson probability
 def poisson_probability(x, lmbda):
     """
-    Calculate the probability of observing k events in a Poisson distribution
+    Calculate the probability of observing x events in a Poisson distribution
     with rate parameter lmbda.
     """
     return (lmbda ** x) * exp(-lmbda) / factorial(x)
 
 ```
 
-Run the following code to check the numerical values:
+Run the following code to check the numerical values. We will first compute it with the function we just defined, 
+and then using the *poisson* probability mass function, already included in the *stats* library.
 
 ```python
 
@@ -108,20 +112,24 @@ print(f"Probability of observing moer than {x} patients with lambda {lmbda}: {pr
 
 ### Gaussian distribution
 
-Write the following function computing the Gaussian distribution:
+Write the following function computing the Gaussian distribution, with a given mean value *mu* and standard deviation *sigma*:
+The negative exponential squared, which gives the bell shape, is encoded in the *error function*, or *erf*, included in the *math* library.
 
 ```python
 
 # Function computing gaussian probability
 def gaussian_density(x, mu, sigma):
     """
-    Calculate the probability of a Gaussian distribution falling between x1 and x2.
+    Calculate the probability of a Gaussian distribution at a given value x.
     """
     return erf((x - mu) / (sqrt(2) * sigma)) / 2
 
 ```
 
-Run the following code to check the numerical values:
+Run the following code to check the numerical values. We will first compute it with the function we just defined, 
+and then using the *norm* probability mass function, already included in the *stats* library.
+Remember that, for computing a probability in a continous case, we have to evaluate the probability distribution (or probability *density*),
+in a specific range. This is why the *stats* library names them *cdf*, since it evaluates the difference of *cumulative* distributions.
 
 ```python
 
