@@ -10,19 +10,38 @@
 
 In this chapter we will introduce hypothesis testing and statistical inference.
 We will discuss the general approach to hypothesis testing, and show an example of a one-side and two-sided t-test.
+
+### One-sided t-test
+
+We will use a one sided t-test to check if a die is biased.
+Create a Python script for this exercise by running the following command in your terminal.
+
+```bash
+
+touch t_test_1_sided.py
+
+```
+
+Open the file with *VScode*.
+
+```bash
+
+code t_test_1_sided.py
+
+```
+
 Import the libraries neeed for these examples.
 
 ```python
 
 # Import libraries
 import numpy as np
-from math import comb, exp, factorial, erf, sqrt
-from scipy import stats
+from scipy.stats import ttest_1samp, t
 import matplotlib.pyplot as plt
 
 ```
 
-### Check if a die is biased
+We will first simulate some rolls coming from a uniform distribution, and plot them as a histogram
 
 ```python
 
@@ -31,9 +50,6 @@ np.random.seed(42)
 
 # Simulate 100 die rolls
 rolls = np.random.randint(1, 7, size = 100)
-# Simulate biased rools
-probabilities = [0.1, 0.1, 0.2, 0.2, 0.1, 0.3]
-rolls = np.random.choice([1, 2, 3, 4, 5, 6], size = 100, p = probabilities)
 
 # Plot histogram of observations
 plt.hist(rolls, bins = np.arange(1, 8) - 0.5, edgecolor = "black", rwidth = 0.8)
@@ -45,9 +61,8 @@ plt.show()
 
 ```
 
-### One-sided t-test
-
-One-sided t-test:
+Then we will compute the sample mean and compare it with the expected value if H0 is true, to build the t-statistic.
+Since our alternative hypothtesis is p > 1/6 for some values, we will use a one-sided t test.
 
 ```python
 
@@ -83,9 +98,75 @@ else:
 
 ```
 
+Check what happens if we simulate a roll with biased values, 
+by explicitely writing unequal probabilities for some of the faces.
+
+```python
+
+# Random seed
+np.random.seed(42)
+
+# # Simulate 100 die rolls
+# rolls = np.random.randint(1, 7, size = 100)
+
+# Simulate biased rools
+probabilities = [0.1, 0.1, 0.2, 0.2, 0.1, 0.3]
+rolls = np.random.choice([1, 2, 3, 4, 5, 6], size = 100, p = probabilities)
+
+```
+
 ### Two-sided t-test
 
-Two sided t-test
+We will use a one sided t-test to check if a die is biased.
+Create a Python script for this exercise by running the following command in your terminal.
+
+```bash
+
+touch t_test_2_sided.py
+
+```
+
+Open the file with *VScode*.
+
+```bash
+
+code t_test_2_sided.py
+
+```
+
+Import the libraries neeed for these examples.
+
+```python
+
+# Import libraries
+import numpy as np
+from scipy.stats import ttest_1samp, t
+import matplotlib.pyplot as plt
+
+```
+
+We will first simulate some rolls coming from a uniform distribution, and plot them as a histogram
+
+```python
+
+# Random seed
+np.random.seed(42)
+
+# Simulate 100 die rolls
+rolls = np.random.randint(1, 7, size = 100)
+
+# Plot histogram of observations
+plt.hist(rolls, bins = np.arange(1, 8) - 0.5, edgecolor = "black", rwidth = 0.8)
+plt.xticks(range(1, 7))
+plt.xlabel("Die face")
+plt.ylabel("Frequency")
+plt.title("Histogram of die rolls")
+plt.show()
+
+```
+
+Then we will compute the sample mean and compare it with the expected value if H0 is true, to build the t-statistic.
+Since our alternative hypothtesis is p != 1/6 for some values, we will use a two-sided t test.
 
 ```python
 
@@ -120,5 +201,22 @@ if p_value < 0.05:
     print("The die is likely biased (reject null hypothesis).")
 else:
     print("The die is not biased (fail to reject null hypothesis).")
+
+```
+
+Check what happens if we simulate a roll with biased values, 
+by explicitely writing unequal probabilities for some of the faces.
+
+```python
+
+# Random seed
+np.random.seed(42)
+
+# # Simulate 100 die rolls
+# rolls = np.random.randint(1, 7, size = 100)
+
+# Simulate biased rools
+probabilities = [0.1, 0.1, 0.2, 0.2, 0.1, 0.3]
+rolls = np.random.choice([1, 2, 3, 4, 5, 6], size = 100, p = probabilities)
 
 ```
