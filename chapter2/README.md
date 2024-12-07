@@ -11,6 +11,8 @@
 In this chapter we will describe parmeter estimation, mean and variance.
 Then we will discuss the central limit theorem and the law of large numbers.
 
+### Parameter estimation
+
 Create a Python script for this exercise by running the following command in your terminal.
 
 ```bash
@@ -37,8 +39,6 @@ import seaborn as sns
 import matplotlib.pyplot as plt
 
 ```
-
-### Parameter estimation
 
 Mean and variance as expecet values:
 
