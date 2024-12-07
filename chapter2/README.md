@@ -10,14 +10,29 @@
 
 In this chapter we will describe parmeter estimation, mean and variance.
 Then we will discuss the central limit theorem and the law of large numbers.
+
+Create a Python script for this exercise by running the following command in your terminal.
+
+```bash
+
+touch expected_values.py
+
+```
+
+Open the file with *VScode*.
+
+```bash
+
+code expected_values.py
+
+```
+
 Import the libraries neeed for these examples.
 
 ```python
 
 # Import libraries
 import numpy as np
-from math import comb, exp, factorial, erf, sqrt
-from scipy import stats
 import seaborn as sns
 import matplotlib.pyplot as plt
 
@@ -65,6 +80,36 @@ print("Variance as second moment of the distribution:", variance_distribution)
 
 ### The central limit theorem:
 
+Create a Python script for this exercise by running the following command in your terminal.
+
+```bash
+
+touch central_limit_theorem.py
+
+```
+
+Open the file with *VScode*.
+
+```bash
+
+code central_limit_theorem.py
+
+```
+
+Import the libraries neeed for these examples.
+
+```python
+
+# Import libraries
+import numpy as np
+import seaborn as sns
+import matplotlib.pyplot as plt
+
+```
+
+We simulate 1,000 samples of 30 dice rolls each. For each sample, we calculate the mean and store it.
+We then plot the distribution of these sample means, and see how it converges to a normal distribution centered around the true mean.
+
 ```python
 
 # Set up seaborn for prettier plots
@@ -73,7 +118,7 @@ sns.set(style = "whitegrid")
 # Central Limit Theorem (CLT) .....................................................................
 print("The central limit theorem (CLT)")
 
-# We simulate 1,000 samples of size 30 for both dice rolls and waiting times.
+# We simulate 1,000 samples of size 30 for both dice rolls.
 # For each sample, we calculate the mean and store it.
 # We then plot the distribution of these sample means, should approximate a normal distribution centered around the true mean.
 
@@ -85,60 +130,69 @@ num_samples = 1000 # Number of samples for CLT
 
 # True means for comparison
 dice_mean = 3.5 # True mean for a six-sided die
-waiting_times = np.array([1, 2, 2, 3, 5, 10, 15, 20, 30, 60])
-waiting_time_mean = np.mean(waiting_times) # True mean for waiting times
 
 # Dice roll sample means
 dice_sample_means = [np.mean(np.random.randint(1, 7, sample_size)) for _ in range(num_samples)]
 
-# Skewed waiting time sample means
-waiting_time_sample_means = [np.mean(np.random.choice(waiting_times, sample_size)) for _ in range(num_samples)]
-
 # Plotting CLT results
-plt.figure(figsize = (14, 6))
+plt.figure(figsize = (10, 5))
 
-# Dice CLT Plot
-plt.subplot(1, 2, 1)
+# Plot sample mean distribution
 sns.histplot(dice_sample_means, kde = True, color = "skyblue", bins = 30)
 plt.axvline(dice_mean, color = "red", linestyle = "dashed", linewidth = 2, label = f"True Mean = {dice_mean}")
 plt.title("Central limit theorem - Dice roll sample means")
 plt.xlabel("Sample mean of dice rolls")
 plt.ylabel("Frequency")
 plt.legend()
-
-# Waiting Time CLT Plot
-plt.subplot(1, 2, 2)
-sns.histplot(waiting_time_sample_means, kde = True, color = "salmon", bins = 30)
-plt.axvline(waiting_time_mean, color = "red", linestyle = "dashed", linewidth = 2, label = f"True Mean = {waiting_time_mean:.2f}")
-plt.title("Central limit theorem - Waiting time sample seans")
-plt.xlabel("Sample mean of waiting times")
-plt.ylabel("Frequency")
-plt.legend()
-
-# Combine plots
-plt.tight_layout()
 plt.show()
 
 ```
 
 ### The law of large numbers:
 
+Create a Python script for this exercise by running the following command in your terminal.
+
+```bash
+
+touch law_large_numbers.py
+
+```
+
+Open the file with *VScode*.
+
+```bash
+
+code law_large_numbers.py
+
+```
+
+Import the libraries neeed for these examples.
+
+```python
+
+# Import libraries
+import numpy as np
+import seaborn as sns
+import matplotlib.pyplot as plt
+
+```
+
+We simulate 5,000 dice rolls. For each sample size from 1 to 5,000, we calculate the running mean.
+We plot the running mean to show how it converges to the true mean, illustrating the LLN.
+
 ```python
 
 # Set up seaborn for prettier plots
 sns.set(style = "whitegrid")
 
-# Central Limit Theorem (CLT) .....................................................................
+# The law of large numbers (LLN) .....................................................................
 print("The law of large numbers (LLN")
 
-# We simulate 5,000 rolls for the dice and 5,000 samples from the waiting times.
-# For each sample size from 1 to 5,000, we calculate the running mean.
+# We simulate 5,000 dice rolls. For each sample size from 1 to 5,000, we calculate the running mean.
 # We plot the running mean to show how it converges to the true mean, illustrating the LLN.
 
 # True means for comparison
 dice_mean = 3.5 # True mean for a six-sided die
-waiting_times = np.array([1, 2, 2, 3, 5, 10, 15, 20, 30, 60])
-waiting_time_mean = np.mean(waiting_times) # True mean for waiting times
 
 # Parameters
 # num_samples = 50 # Number of samples for LLN
@@ -149,14 +203,10 @@ num_samples = 5000 # Number of samples for LLN
 dice_rolls = np.random.randint(1, 7, num_samples)  # Simulate 5000 dice rolls
 dice_running_mean = np.cumsum(dice_rolls) / np.arange(1, num_samples + 1)
 
-# Waiting Time Running Mean
-waiting_time_rolls = np.random.choice(waiting_times, num_samples)  # Simulate 5000 waiting times
-waiting_time_running_mean = np.cumsum(waiting_time_rolls) / np.arange(1, num_samples + 1)
-
 # Plotting LLN results
-plt.figure(figsize = (14, 6))
+plt.figure(figsize = (10, 5))
 
-# Dice LLN Plot
+# Plot running mean
 plt.subplot(1, 2, 1)
 plt.plot(dice_running_mean, color = "skyblue", label = "Running Mean")
 plt.axhline(dice_mean, color = "red", linestyle = "dashed", linewidth = 2, label = f"True Mean = {dice_mean}")
@@ -164,17 +214,6 @@ plt.title("Law of large numbers - Dice roll running mean")
 plt.xlabel("Number of rolls")
 plt.ylabel("Mean of dice rolls")
 plt.legend()
-
-# Waiting Time LLN Plot
-plt.subplot(1, 2, 2)
-plt.plot(waiting_time_running_mean, color = "salmon", label = "Running Mean")
-plt.axhline(waiting_time_mean, color = "red", linestyle = "dashed", linewidth = 2, label = f"True Mean = {waiting_time_mean:.2f}")
-plt.title("Law of large numbers - Waiting time running mean")
-plt.xlabel("Number of samples")
-plt.ylabel("Mean of waiting times")
-plt.legend()
-
-plt.tight_layout()
 plt.show()
 
 ```
