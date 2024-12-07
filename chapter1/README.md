@@ -10,10 +10,10 @@
 
 In this chapter we will describe random events and probability distriubtions.
 We will focus on two main classes, the so-called *discrete* and *continous* events.
-We will simulate a couple of examples for the binomial, Poisson, and Gaussian probabilities, 
-and in all cases we will compare our manual calculations with the ones included in the *stats* package of *scipy*.
+We will simulate some examples following the binomial, Poisson, and Gaussian distributions, 
+and we will compare our manual calculations with the ones included in the *stats* package of the *scipy* library.
 
-Create *python* script for this exercise by running the following command in your terminal.
+Create a Python script for this exercise by running the following command in your terminal.
 
 ```bash
 
@@ -43,7 +43,7 @@ import matplotlib.pyplot as plt
 
 ### Binomial distribution
 
-Write the following function computing the binomial distribution for a given number of sucesses *x*, number of trials *n*, and indifidual probability *p*:
+Write the following function computing the binomial distribution for a given number of sucesses *x*, number of trials *n*, and individual probability *p*:
 
 ```python
 
