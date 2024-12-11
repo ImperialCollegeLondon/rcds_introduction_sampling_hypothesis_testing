@@ -35,6 +35,7 @@ Import the libraries neeed for these examples.
 
 # Import libraries
 import numpy as np
+from scipy import stats
 import seaborn as sns
 import matplotlib.pyplot as plt
 
@@ -44,37 +45,76 @@ Mean and variance as expecet values:
 
 ```python
 
-# Manual / numpy calculation of the mean (expected value)
-mean_observations_manual = sum(observations) / len(observations)
-mean_observations_np = np.mean(observations)
-print("\nMean as expected value (numpy):", mean_observations_np)
-print("Mean as expected value (manual):", mean_observations_manual)
+# Simulate observations
+data = [1, 2, 2, 3, 4, 5, 5, 5, 6]
 
-# Manal / numpy calculation of the Variance (expected squared deviation)
-variance_observations_np = np.var(observations, ddof = 0) # Population variance (ddof=0)
-squared_diffs = [(x - mean_observations_manual) ** 2 for x in observations]
-variance_observations_manual = sum(squared_diffs) / len(observations)
-print("Variance as expected squared deviation (numpy):", variance_observations_np)
-print("Variance as expected squared deviation (manual):", variance_observations_manual)
+# Manual / numpy calculation of the mean (expected value)
+mean_manual = sum(data) / len(data)
+mean_np = np.mean(data)
+print("\nMean as expected value (manual):", mean_manual)
+print("Mean as expected value (numpy):", mean_np)
+
+# Manual / numpy calculation of the variance (expected squared deviation)
+squared_diffs = [(x - mean_manual) ** 2 for x in data]
+variance_manual = sum(squared_diffs) / len(data)
+variance_np = np.var(data, ddof = 0) # Population variance (ddof=0)
+print("\nVariance as expected squared deviation (manual):", variance_manual)
+print("Variance as expected squared deviation (numpy):", variance_np)
 
 ```
 
-Mean and variance as momenta of distribution:
-
+Median as middle point of an observation set
 ```python
 
-# Simulate a probability distribution (example with outcomes and probabilities)
-# Suppose we have a random variable X with possible values and their probabilities:
-values = np.array([2, 4, 5, 7, 9]) # Possible outcomes
-probabilities = np.array([0.1, 0.3, 0.2, 0.2, 0.2]) # Corresponding probabilities (must sum to 1)
+# Manually compute the median
+def manual_median(data):
 
-# Mean as first moment of distribution
-mean_distribution = np.sum(values * probabilities)
-print("\nMean as first moment of the distribution:", mean_distribution)
+    # Sort observation
+    sorted_data = sorted(data)
+    n = len(sorted_data)
+    middle = n // 2  # Divide two numbers and truncate (round down) result to the nearest integer
 
-# Variance as second moment of distribution
-variance_distribution = np.sum((values - mean_distribution)**2 * probabilities)
-print("Variance as second moment of the distribution:", variance_distribution)
+    if n % 2 == 0:
+        # Even number of elements: average the two middle values
+        return (sorted_data[middle - 1] + sorted_data[middle]) / 2
+    else:
+        # Odd number of elements: return the middle value
+        return sorted_data[middle]
+
+# Manual / scipy calculation of the median
+median_manual =  manual_median(data)
+median_scipy = np.median(data)
+print("\nMedian (manual):", median_manual)
+print("Median (scipy):", median_scipy)
+
+```
+
+Mode as the most frequent value
+```python
+
+# Manually compute the mode
+def manual_mode(data):
+
+    # Create frequency vector
+    frequency = {}
+    for value in data:
+        frequency[value] = frequency.get(value, 0) + 1
+    
+    # Find argument that appears most
+    max_count = max(frequency.values())
+    modes = [key for key, count in frequency.items() if count == max_count]
+
+    if len(modes) == 1:
+        return modes[0] # Single mode
+    else:
+        return modes # Multiple modes or no clear mode
+
+
+# Manual / scipy calculation of the mode
+mode_manual = manual_mode(data)
+mode_scipy = stats.mode(data, keepdims = True)
+print("\nMode (manual):", mode_manual)
+print("Mode (scipy):", mode_scipy.mode[0], "with frequency", mode_scipy.count[0])
 
 ```
 
@@ -115,12 +155,11 @@ We then plot the distribution of these sample means, and see how it converges to
 # Set up seaborn for prettier plots
 sns.set(style = "whitegrid")
 
-# Central Limit Theorem (CLT) .....................................................................
+# Central Limit Theorem (CLT)
 print("The central limit theorem (CLT)")
 
-# We simulate 1,000 samples of size 30 for both dice rolls.
-# For each sample, we calculate the mean and store it.
-# We then plot the distribution of these sample means, should approximate a normal distribution centered around the true mean.
+# We simulate 1,000 samples of size 30 for both dice rolls. Calculate and store the mean for each sample.
+# The distribution of these sample means should approximate a normal distribution centered around the true mean.
 
 # Parameters
 sample_size = 30 # Size of each sample
@@ -185,11 +224,11 @@ We plot the running mean to show how it converges to the true mean, illustrating
 # Set up seaborn for prettier plots
 sns.set(style = "whitegrid")
 
-# The law of large numbers (LLN) .....................................................................
-print("The law of large numbers (LLN")
+# The law of large numbers (LLN)
+print("The law of large numbers (LLN)")
 
-# We simulate 5,000 dice rolls. For each sample size from 1 to 5,000, we calculate the running mean.
-# We plot the running mean to show how it converges to the true mean, illustrating the LLN.
+# Simulate 5,000 dice rolls. Calculate and store the mean for all samples.
+# The running mean, as function of number of samples, should converges to the true mean.
 
 # True means for comparison
 dice_mean = 3.5 # True mean for a six-sided die
@@ -207,7 +246,6 @@ dice_running_mean = np.cumsum(dice_rolls) / np.arange(1, num_samples + 1)
 plt.figure(figsize = (10, 5))
 
 # Plot running mean
-plt.subplot(1, 2, 1)
 plt.plot(dice_running_mean, color = "skyblue", label = "Running Mean")
 plt.axhline(dice_mean, color = "red", linestyle = "dashed", linewidth = 2, label = f"True Mean = {dice_mean}")
 plt.title("Law of large numbers - Dice roll running mean")
