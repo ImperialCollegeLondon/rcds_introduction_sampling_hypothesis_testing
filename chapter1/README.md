@@ -8,25 +8,21 @@
 
 ## Chapter 1. Introduction to probability & random events.
 
-In this chapter we will describe random events and probability distriubtions.
+In this chapter we will describe random events and probability distributions.
 We will focus on two main classes, the so-called *discrete* and *continous* events.
 We will simulate some examples following the binomial, Poisson, and Gaussian distributions, 
-and we will compare our manual calculations with the ones included in the *stats* package of the *scipy* library.
+and we will compare our manual calculations with the ones included in the `stats` package of the `scipy` library.
 
 Create a Python script for this exercise by running the following command in your terminal.
 
 ```bash
-
 touch random_variables.py
-
 ```
 
-Open the file with *VScode*.
+Open the file with `VScode`.
 
 ```bash
-
 code random_variables.py
-
 ```
 
 Import the libraries neeed for these examples.
@@ -58,7 +54,7 @@ def binomial_probability(x, n, p):
 ```
 
 Run the following code to check the numerical values. We will first compute it with the function we just defined, 
-and then using the *binom* probability mass function, already included in the *stats* library.
+and then using the `binom` probability mass function, already included in the `stats` library.
 
 ```python
 
@@ -102,7 +98,7 @@ def poisson_probability(x, lmbda):
 ```
 
 Run the following code to check the numerical values. We will first compute it with the function we just defined, 
-and then using the *poisson* probability mass function, already included in the *stats* library.
+and then using the `poisson` probability mass function, already included in the `stats` library.
 
 ```python
 
@@ -132,7 +128,7 @@ print(f"Probability of observing moer than {x} patients with lambda {lmbda}: {pr
 ### Gaussian distribution
 
 Write the following function computing the Gaussian distribution, with a given mean value *mu* and standard deviation *sigma*:
-The negative exponential squared, which gives the bell shape, is encoded in the *error function*, or *erf*, included in the *math* library.
+The negative exponential squared, which gives the bell shape, is encoded in the *error function*, or `erf`, included in the `math` library.
 
 ```python
 
@@ -146,9 +142,9 @@ def gaussian_density(x, mu, sigma):
 ```
 
 Run the following code to check the numerical values. We will first compute it with the function we just defined, 
-and then using the *norm* probability mass function, already included in the *stats* library.
+and then using the *norm* probability mass function, already included in the `stats` library.
 Remember that, for computing a probability in a continous case, we have to evaluate the probability distribution (or probability *density*),
-in a specific range. This is why the *stats* library names them *cdf*, since it evaluates the difference of *cumulative* distributions.
+in a specific range. This is why the `stats` library names them `cdf`, since it evaluates the difference of *cumulative* distributions.
 
 ```python
 
