@@ -40,7 +40,7 @@ No prior experience on statistics or programming is required for the attendance 
 
 ### Setup
 
-We will be working with Visual Studio Code / RStudio as main editors. Although recommended, they do not need to be installed in your local computers, since we will use Codespaces provided by Github, which already implement an interface ready to program an execute the code.
+We will be working with Visual Studio Code / RStudio as main editors. Although recommended, they do not need to be installed in your local computers, since we will use `Codespaces` provided by `Github`, which already implement an interface ready to program an execute the code.
 Notebook versions are also useful, such as Jupyter notebooks (for the Python version), or Rmd files (for the R version). 
 If you want to use notebooks for the practical sessions, we recommend install Anaconda from https://www.anaconda.com in advance of the workshop.
 
