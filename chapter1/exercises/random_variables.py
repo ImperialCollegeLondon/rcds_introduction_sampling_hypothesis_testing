@@ -105,7 +105,7 @@ print("mean = ", round(mean, 2), "\nvariance = ", round(var, 2))
 
 
 # Gaussian distribution .......................................................
-print("Poisson distribution")
+print("Gaussian distribution")
 
 # Function computing gaussian probability
 def gaussian_density(x, mu, sigma):
@@ -128,6 +128,18 @@ probability2 = stats.norm.cdf(x2, mu, sigma) - stats.norm.cdf(x1, mu, sigma)
 print(f"\nProbability of the Gaussian distribution being between {x1} and {x2}: {probability1}")
 print(f"Probability of the Gaussian distribution being between {x1} and {x2}: {probability2}")
 
+# Plot gaussian distrubtion
+x = np.linspace(mu - 4 * sigma, mu + 4 * sigma, 1000)
+gaussian_distribution = stats.norm.pdf(x, mu, sigma)
+
+# Plot the Gaussian distribution
+plt.plot(x, gaussian_distribution, label = f"mu = {mu}, sigma = {sigma}")
+plt.xlabel('x'); plt.ylabel('Probability Density')
+plt.legend(); plt.grid(True)
+plt.title('Gaussian Distribution')
+# plt.savefig("gaussian.png", dpi = 300, bbox_inches = "tight")
+# plt.show()
+
 # Calculating probability of (-1sigma, 1sigma) 68% CI
 x1 = -2; x2 = 2; mu = 1; sigma = 2
 probability = gaussian_density(sigma, mu, sigma) - gaussian_density(-sigma, mu, sigma)
@@ -142,15 +154,3 @@ print(f"\n95% ci: {probability}")
 x1 = -2; x2 = 2; mu = 1; sigma = 2
 probability = gaussian_density(3 * sigma, mu, sigma) - gaussian_density(-3 * sigma, mu, sigma)
 print(f"\n95% ci: {probability}")
-
-# Plot gaussian distrubtion
-x = np.linspace(mu - 4 * sigma, mu + 4 * sigma, 1000)
-gaussian_distribution = stats.norm.pdf(x, mu, sigma)
-
-# Plot the Gaussian distribution
-plt.plot(x, gaussian_distribution, label = f"mu = {mu}, sigma = {sigma}")
-plt.xlabel('x'); plt.ylabel('Probability Density')
-plt.legend(); plt.grid(True)
-plt.title('Gaussian Distribution')
-# plt.savefig("gaussian.png", dpi = 300, bbox_inches = "tight")
-# plt.show()
