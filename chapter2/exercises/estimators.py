@@ -12,15 +12,15 @@ data = [1, 2, 2, 3, 4, 5, 5, 5, 6]
 # Manual / numpy calculation of the mean (expected value)
 mean_manual = sum(data) / len(data)
 mean_np = np.mean(data)
-print("\nMean as expected value (manual):", mean_manual)
-print("Mean as expected value (numpy):", mean_np)
+print("\nSample mean (manual):", mean_manual)
+print("Sample mean (numpy):", mean_np)
 
 # Manual / numpy calculation of the variance (expected squared deviation)
 squared_diffs = [(x - mean_manual) ** 2 for x in data]
 variance_manual = sum(squared_diffs) / len(data)
 variance_np = np.var(data, ddof = 0) # Population variance (ddof=0)
-print("\nVariance as expected squared deviation (manual):", variance_manual)
-print("Variance as expected squared deviation (numpy):", variance_np)
+print("\nSample variance (manual):", variance_manual)
+print("Sample variance (numpy):", variance_np)
 
 # Manually compute the median
 def manual_median(data):

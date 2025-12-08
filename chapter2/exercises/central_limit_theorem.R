@@ -11,7 +11,7 @@ cat("The central limit theorem (CLT)\n")
 sample_size <- 30 # Size of each sample
 # num_samples <- 10 # Number of samples for CLT
 # num_samples <- 100 # Number of samples for CLT
-num_samples <- 1000 # Number of samples for CLT
+num_samples <- 10000 # Number of samples for CLT
 
 # True mean for comparison
 dice_mean <- 3.5 # True mean for a six-sided die

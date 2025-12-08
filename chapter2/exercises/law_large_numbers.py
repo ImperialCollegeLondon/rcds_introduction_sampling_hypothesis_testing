@@ -21,8 +21,8 @@ dice_mean = 3.5 # True mean for a six-sided die
 
 # Parameters
 # num_samples = 50 # Number of samples for LLN
-# num_samples = 500 # Number of samples for LLN
-num_samples = 5000 # Number of samples for LLN
+# num_samples = 100 # Number of samples for LLN
+num_samples = 1000 # Number of samples for LLN
 
 # Dice Running Mean
 dice_rolls = np.random.randint(1, 7, num_samples)  # Simulate 5000 dice rolls
@@ -38,4 +38,5 @@ plt.title("Law of large numbers - Dice roll running mean")
 plt.xlabel("Number of rolls")
 plt.ylabel("Mean of dice rolls")
 plt.legend()
+# plt.savefig("law_large_numbers.png", dpi = 300, bbox_inches = "tight")
 plt.show()

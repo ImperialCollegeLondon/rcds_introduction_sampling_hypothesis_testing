@@ -18,8 +18,8 @@ print("The central limit theorem (CLT)")
 
 # Parameters
 sample_size = 30 # Size of each sample
-# num_samples = 10 # Number of samples for CLT
-# num_samples = 100 # Number of samples for CLT
+num_samples = 10 # Number of samples for CLT
+num_samples = 100 # Number of samples for CLT
 num_samples = 1000 # Number of samples for CLT
 
 # True means for comparison
@@ -38,4 +38,5 @@ plt.title("Central limit theorem - Dice roll sample means")
 plt.xlabel("Sample mean of dice rolls")
 plt.ylabel("Frequency")
 plt.legend()
+# plt.savefig("central_limit_theorem.png", dpi = 300, bbox_inches = "tight")
 plt.show()
