@@ -12,9 +12,9 @@ np.random.seed(42)
 
 # Simulate 100 die rolls
 rolls = np.random.randint(1, 7, size = 100)
-# Simulate biased rools
-probabilities = [0.1, 0.1, 0.2, 0.2, 0.1, 0.3]
-rolls = np.random.choice([1, 2, 3, 4, 5, 6], size = 100, p = probabilities)
+# # Simulate biased rools
+# probabilities = [0.1, 0.1, 0.2, 0.2, 0.1, 0.3]
+# rolls = np.random.choice([1, 2, 3, 4, 5, 6], size = 100, p = probabilities)
 
 # Plot histogram of observations
 plt.hist(rolls, bins = np.arange(1, 8) - 0.5, edgecolor = "black", rwidth = 0.8)
