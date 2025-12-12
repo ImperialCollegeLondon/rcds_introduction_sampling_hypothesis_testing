@@ -22,6 +22,7 @@ plt.xticks(range(1, 7))
 plt.xlabel("dice face")
 plt.ylabel("Frequency")
 plt.title("Histogram of dice rolls")
+# plt.savefig("rolls_histogram.png", dpi = 300, bbox_inches = "tight")
 plt.show()
 
 # Perform two-sided t-test
