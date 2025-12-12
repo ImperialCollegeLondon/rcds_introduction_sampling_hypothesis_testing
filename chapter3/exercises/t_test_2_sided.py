@@ -10,7 +10,7 @@ import matplotlib.pyplot as plt
 # Random seed
 np.random.seed(42)
 
-# Simulate 100 die rolls
+# Simulate 100 dice rolls
 rolls = np.random.randint(1, 7, size = 100)
 # # Simulate biased rools
 # probabilities = [0.1, 0.1, 0.2, 0.2, 0.1, 0.3]
@@ -19,13 +19,13 @@ rolls = np.random.randint(1, 7, size = 100)
 # Plot histogram of observations
 plt.hist(rolls, bins = np.arange(1, 8) - 0.5, edgecolor = "black", rwidth = 0.8)
 plt.xticks(range(1, 7))
-plt.xlabel("Die face")
+plt.xlabel("dice face")
 plt.ylabel("Frequency")
-plt.title("Histogram of die rolls")
+plt.title("Histogram of dice rolls")
 plt.show()
 
 # Perform two-sided t-test
-expected_mean = 3.5  # Assuming H0 (die is fair)
+expected_mean = 3.5  # Assuming H0 (dice is fair)
 t_stat, p_value = ttest_1samp(rolls, popmean = expected_mean)
 
 # Plot t-distribution with critical values
@@ -38,20 +38,21 @@ critical_t_right = t.ppf(1 - alpha / 2, df)  # Upper critical t-value (positive 
 x = np.linspace(-4, 4, 1000)
 y = t.pdf(x, df)
 plt.plot(x, y, label = "t-Distribution")
-plt.axvline(critical_t_left, color = "red", linestyle = "--", label = f"Critical t = {critical_t_left:.2f}")
-plt.axvline(critical_t_right, color = "red", linestyle = "--", label = f"Observed t = {critical_t_right:.2f}")
+# plt.axvline(critical_t_left, color = "red", linestyle = "--", label = f"Critical t = {critical_t_left:.2f}")
+# plt.axvline(critical_t_right, color = "red", linestyle = "--", label = f"Observed t = {critical_t_right:.2f}")
 plt.axvline(t_stat, color = "blue", linestyle = "--", label = f"t-statistic = {t_stat:.2f}")
-plt.fill_between(x, 0, y, where = (x <= critical_t_left) | (x >= critical_t_right), color = "red", alpha = 0.3, label = "Rejection Region")
+# plt.fill_between(x, 0, y, where = (x <= critical_t_left) | (x >= critical_t_right), color = "red", alpha = 0.3, label = "Rejection Region")
 plt.xlabel("t-value")
 plt.ylabel("Probability density")
 plt.title("T-distribution and critical values (two-sided test)")
 plt.legend()
+# plt.savefig("t_test_2_sided.png", dpi = 300, bbox_inches = "tight")
 plt.show()
 
 # Print results
 print(f"t-statistic: {t_stat:.4f}")
 print(f"Two-sided p-value: {p_value:.4f}")
 if p_value < 0.05:
-    print("The die is likely biased (reject null hypothesis).")
+    print("The dice is likely biased (reject null hypothesis).")
 else:
-    print("The die is not biased (fail to reject null hypothesis).")
+    print("The dice is not biased (fail to reject null hypothesis).")
